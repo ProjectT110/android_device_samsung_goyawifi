@@ -14,7 +14,7 @@
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
-# Inherit from lt02wifi device
+# Inherit from goyawifi device
 $(call inherit-product, device/samsung/goyawifi/device_goyawifi.mk)
 
 # Set those variables here to overwrite the inherited values.
