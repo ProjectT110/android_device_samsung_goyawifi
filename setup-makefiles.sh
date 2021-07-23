@@ -26,11 +26,11 @@ export INITIAL_COPYRIGHT_YEAR=2017
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
-CM_ROOT="$(dirname "${BASH_SOURCE}")"
+CM_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 CM_ROOT="$(dirname "${CM_ROOT}")"
 CM_ROOT="$(dirname "${CM_ROOT}")"
 CM_ROOT="$(dirname "${CM_ROOT}")"
-echo CM_ROOT
+echo "${CM_ROOT}"
 
 HELPER="$CM_ROOT"/vendor/cm/build/tools/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
