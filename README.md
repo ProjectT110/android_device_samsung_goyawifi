@@ -1,7 +1,7 @@
 # android_device_samsung_goyawifi
 
 Device tree for SM-T110 *(goyawifi)*.
-- [x] Can build recovery
+- [ ] Can build recovery
 - [ ] Can build stock ROM
 - [ ] Can build custom ROM
 
