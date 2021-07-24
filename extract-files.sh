@@ -1,3 +1,4 @@
+
 #!/bin/bash
 #
 # Copyright (C) 2017 The LineageOS Project
@@ -24,11 +25,7 @@ set -e
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
-CM_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-CM_ROOT="$(dirname "${CM_ROOT}")"
-CM_ROOT="$(dirname "${CM_ROOT}")"
-CM_ROOT="$(dirname "${CM_ROOT}")"
-echo "${CM_ROOT}"
+CM_ROOT="$MY_DIR"/../../..
 
 HELPER="$CM_ROOT"/vendor/cm/build/tools/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
