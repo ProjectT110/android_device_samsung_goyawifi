@@ -23,15 +23,15 @@ TARGET_SCREEN_HEIGHT := 600
 TARGET_BOOTANIMATION_HALF_RES := true
 
 
-# # Audio
-# PRODUCT_PACKAGES += \
-#     audio_effects.conf \
-#     audio_hw.xml \
-#     audio_para \
-#     audio_policy.conf \
-#     codec_pga.xml \
-#     tiny_hw.xml \
-#     audio.primary.pxa988
+# Audio
+PRODUCT_PACKAGES += \
+    $(LOCAL_PATH)/audio/audio_effects.conf \
+    $(LOCAL_PATH)/audio/audio_hw.xml \
+    $(LOCAL_PATH)/audio/audio_para \
+    $(LOCAL_PATH)/audio/audio_policy.conf \
+    $(LOCAL_PATH)/audio/codec_pga.xml \
+    $(LOCAL_PATH)/audio/tiny_hw.xml
+
 # 
 # # Camera
 # PRODUCT_PACKAGES += \
@@ -63,10 +63,10 @@ PRODUCT_COPY_FILES += \
 #     libmemoryheapion \
 #     libion_sprd
 # 
-# # Keylayouts
-# PRODUCT_COPY_FILES += \
-#     $(LOCAL_PATH)/keylayout/sci-keypad.kl:system/usr/keylayout/sci-keypad.kl \
-#     $(LOCAL_PATH)/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl
+# Keylayouts
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keylayout/sci-keypad.kl:system/usr/keylayout/sci-keypad.kl \
+    $(LOCAL_PATH)/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl
 # 
 # # Lights
 # PRODUCT_PACKAGES += \
