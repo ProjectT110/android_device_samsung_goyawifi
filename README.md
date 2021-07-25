@@ -1,13 +1,15 @@
 # android_device_samsung_goyawifi
-
-Device tree for SM-T110 *(goyawifi)*.
-- [ ] Can build recovery
-- [ ] Can build stock ROM
-- [ ] Can build custom ROM
+## Device tree for SM-T110 *(goyawifi)*.
 
 <br>
 
-# Specifications
+## Current Status
+- [ ] Can build TWRP
+- [ ] Can build Android
+
+<br>
+
+## Specifications
 Basic   | Spec Sheet
 -------:|:-------------------------
 CPU     | Dual Core 1.2 GHz
@@ -18,4 +20,4 @@ Shipped Android Version | 4.2.2
 Storage | 8 GB
 MicroSD | Up to 128 GB
 Battery | Li-Ion 3600mAh battery
-Display | 1024 x 600 pixels, 7.0 inches
+Display | 600 x 1024 pixels, 7.0 inches
