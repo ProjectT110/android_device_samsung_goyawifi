@@ -48,10 +48,12 @@ TARGET_BOOTANIMATION_HALF_RES := true
 #     libstagefright_sprd_mpeg4dec \
 #     libstagefright_sprd_mpeg4enc \
 #     libstagefright_sprd_vpxdec
-# 
-# # GPS
-# PRODUCT_PACKAGES += \
-#     gps.xml
+#
+# GPS
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/gps/sirfgps.conf:system/etc/sirfgps.conf \
+	$(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf \
+    $(LOCAL_PATH)/gps/gps.xml:system/etc/gps.xml \
 # 
 # # HWC
 # PRODUCT_PACKAGES += \
