@@ -226,6 +226,7 @@ usr/share/alsa/pcm/surround71.conf
 usr/share/alsa/alsa.conf
 vendor/lib/hw/lights.mrvl.so
 xbin/iwconfig
+xbin/zip
 
 ## Missing permission to get these files:
 # etc/bluetooth/bt_secure_manager_app_pub_key
