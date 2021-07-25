@@ -16,6 +16,7 @@
 ## Inherit from the proprietary version
 -include vendor/samsung/goyawifi/BoardConfigVendor.mk
 
+
 ## Target Device Info
 USE_CAMERA_STUB := true
 BOARD_HAS_NO_SELECT_BUTTON := true
@@ -36,6 +37,7 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 
+
 ## Kernel
 # TARGET_PREBUILT_KERNEL := device/samsung/goyawifi/kernel
 TARGET_KERNEL_SOURCE  := kernel/samsung/goyawifi
@@ -44,6 +46,7 @@ BOARD_KERNEL_CMDLINE  := initrd=0x01100000,16m uart_dma vmalloc=0xF000000 qhd_lc
 BOARD_KERNEL_BASE     := 0x10000000
 BOARD_MKBOOTIMG_ARGS  := --ramdisk_offset 0x01000000
 BOARD_KERNEL_PAGESIZE := 2048
+
 
 ## Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
@@ -63,20 +66,26 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1594884096
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 5509218304
 BOARD_FLASH_BLOCK_SIZE := 131072
 
+
 ## VOLD
 # BOARD_VOLD_MAX_PARTITIONS := 17
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/f_mass_storage/lun%d/file"
 
+
 ## Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/goyawifi/bluetooth
 BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_MRVL := true
+MRVL_WIRELESS_DAEMON_API := true
+
 
 ## Charging Mode
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
 BOARD_BATTERY_DEVICE_NAME := "battery"
+
 
 ## TWRP Configuration
 DEVICE_RESOLUTION := 1024x600
@@ -96,6 +105,7 @@ HAVE_SELINUX := true
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 
+
 ## SELinux
-BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
+BOARD_SEPOLICY_DIRS += device/samsung/goyawifi/sepolicy
 SERVICES_WITHOUT_SELINUX_DOMAIN := true
