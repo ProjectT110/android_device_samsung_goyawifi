@@ -5,6 +5,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/samsung/goyawifi/goyawifi-vendor.mk)
 
+PRODUCT_PROPERTY_OVERRIDES := \
+    ro.carrier=wifi-only
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -98,9 +101,8 @@ TARGET_BOOTANIMATION_HALF_RES := true
 #     init.wifi.rc \
 #     ueventd.pxa988.rc
 # 
-# # WiFi
-# PRODUCT_PACKAGES += \
-#     p2p_supplicant_overlay.conf \
-#     wpa_supplicant.conf \
-#     wpa_supplicant_overlay.conf
-
+# WiFi
+PRODUCT_PACKAGES += \
+    $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/wifi/wpa_supplicant.conf \
+    $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf

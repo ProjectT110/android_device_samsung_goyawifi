@@ -40,11 +40,11 @@ TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 # TARGET_PREBUILT_KERNEL := device/samsung/goyawifi/kernel
 TARGET_KERNEL_SOURCE  := kernel/samsung/goyawifi
 TARGET_KERNEL_CONFIG  := goyawifi_recovery_defconfig
-BOARD_KERNEL_CMDLINE  := androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE  := initrd=0x01100000,16m uart_dma vmalloc=0xF000000 qhd_lcd=1 cma=0 ioncarv=80M@0x09000000 reserve_gpu=64M ddr_mode=1 androidboot.emmc_checksum=3 androidboot.serialno=4790f133174c7100 lcd_id=0x00000000 board_id=0x02 disp_start_addr=0x17000000 androidboot.debug_level=0x4f4c sec_debug.level=0 sec_log=0x100000@0x8140000 cordon=e2a982443e9ba15ea7ee67551b4daddf androidboot.selinux=permissive
 BOARD_KERNEL_BASE     := 0x10000000
 BOARD_MKBOOTIMG_ARGS  := --ramdisk_offset 0x01000000
 BOARD_KERNEL_PAGESIZE := 2048
-    
+
 ## Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
 BOARD_UMS_LUNFILE := "/sys/class/android_usb/f_mass_storage/lun0/file"
