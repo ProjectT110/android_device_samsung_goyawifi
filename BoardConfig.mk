@@ -95,3 +95,7 @@ TW_INCLUDE_FUSE_EXFAT := true
 HAVE_SELINUX := true
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
+
+## SELinux
+include device/samsung/goyawifi/sepolicy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
