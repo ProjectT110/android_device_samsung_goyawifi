@@ -1,0 +1,89 @@
+#
+# system.prop for goyawifi
+#
+# rotation setting in potrait mode.
+ro.sf.hwrotation=90
+
+ro.config.used_hw_vsync=0
+
+ro.radio.noril=yes
+ro.carrier=wifi-only
+
+# System property for Default Brightness
+ro.lcd_brightness=195
+ro.sf.lcd_density=160
+
+# minimum brightness value
+ro.lcd_min_brightness=20
+
+# Stop GPU crash while shutdown
+ro.egl.destroy_after_detach=true
+
+camera.disable_zsl_mode=1
+ro.digital.fm.support=1
+ro.config.ksm.support=true
+ro.bluetooth.request.master=true
+
+media.stagefright.less-secure=true
+media.stagefright.legacyencoder=true
+
+debug.hwui.render_dirty_regions=false
+drm.service.enabled=1
+
+#zram config
+ro.config.zram.support=true
+ro.board_ram_size=high
+# SPRD: add low cost low memory @{
+ro.config.low_ram=false
+# @}
+
+persist.ini.connectivity.prodnv=0
+
+#
+# ADDITIONAL_BUILD_PROPERTIES
+#
+ro.astcenc.astcsupport=0
+ro.mct.compressiontype=ETC1
+dalvik.vm.heapstartsize=8m
+dalvik.vm.heapgrowthlimit=64m
+dalvik.vm.heapsize=384m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapminfree=512k
+dalvik.vm.heapmaxfree=8m
+persist.sys.thermal.enable=1
+persist.sys.sprd.modemreset=1
+ro.adb.secure=0
+ro.secure=0
+persist.sys.usb.config=mtp,adb
+persist.sys.sprd.wcnreset=1
+persist.sys.engpc.disable=0
+persist.service.agps.network=4g
+persist.sys.apr.intervaltime=1
+persist.sys.apr.autoupload=1
+sys.tempsd.enable=0
+sys.internal.emulated=1
+keyguard.no_require_sim=true
+persist.msms.phone_default=0
+persist.sys.modem.diag=,gser
+sys.usb.gser.count=8
+ro.modem.external.enable=0
+persist.sys.support.vt=false
+persist.support.oplpnn=true
+persist.support.cphsfirst=false
+lmk.autocalc=false
+use_brcm_fm_chip=true
+ro.build.scafe=latte
+ro.build.scafe.size=tall
+ro.build.scafe.cream=white
+ro.build.scafe.shot=quarter
+ro.config.mdha_ssr_enable=false
+ro.com.android.dateformat=dd-MM-yyyy
+ro.com.google.clientidbase=android-samsung
+
+ro.adb.qemud=1
+persist.sys.dalvik.vm.lib.2=libart.so
+dalvik.vm.isa.arm.features=div
+ro.build.selinux=1
+net.bt.name=Android
+
+ro.sys.sdcardfs=true
