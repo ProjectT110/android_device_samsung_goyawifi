@@ -3,6 +3,17 @@
 
 <br>
 
+## Credits
+<a href="https://github.com/sanderlippa" title="sanderlippa on GitHub">sanderlippa</a>
+
+<a href="https://github.com/1Jesper1" title="1Jesper1 on GitHub">1Jesper1</a>
+
+<a href="https://github.com/gr8nole" title="gr8nole on GitHub">gr8nole</a>
+
+<a href="https://github.com/underscoremone" title="underscoremone on GitHub">underscoremone</a>
+
+<br>
+
 ## Current Status
 - [ ] Can build TWRP
 - [ ] Can build Android
@@ -13,7 +24,7 @@
 Basic   | Spec Sheet
 -------:|:-------------------------
 CPU     | Dual Core 1.2 GHz
-Chipset | Maxwell PXA986
+Chipset | Maxwell PXA986/PXA988
 GPU     | Vivante GC1000
 Memory  | 1 GB RAM
 Shipped Android Version | 4.2.2
