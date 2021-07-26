@@ -10,7 +10,7 @@ $(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk) # Linea
 $(call inherit-product, device/samsung/goyawifi/device_goyawifi.mk)      # Target device's makefile.
 
 
-## Prodct Metadata
+## Product Configuration
 PRODUCT_BRAND := samsung                                                 # Target device's brand. This is usually the manufacturer of the device.
 PRODUCT_DEVICE := goyawifi                                               # Target device's device name. This is the codename of the device.
 PRODUCT_MANUFACTURER := samsung                                          # Target device's manufacturer. This is usually the board manufacturer of the device, but is usually identical to the brand.

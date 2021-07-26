@@ -5,7 +5,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)     # Full base 
 $(call inherit-product, device/samsung/goyawifi/device_goyawifi.mk) # Device configuration file included with the device.
 
 
-## Product Metadata
+## Product Configuration
 PRODUCT_BRAND := samsung                                            # Target device's brand. This is usually the manufacturer of the device.
 PRODUCT_DEVICE := goyawifi                                          # Target device's device name. This is the codename of the device.
 PRODUCT_NAME := full_goyawifi                                       # Target device's building name. This is usually the same as the file name in full_{codename} makefiles.

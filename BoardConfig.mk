@@ -1,51 +1,38 @@
-# Copyright (C) 2013 The CyanogenMod Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
+### BoardConfig.mk for goyawifi
 
-## Inherit from the proprietary version
--include vendor/samsung/goyawifi/BoardConfigVendor.mk
+## Proprietary Version
+$(call inherit-product-if-exists, vendor/samsung/goyawifi/BoardConfigVendor.mk)       # Get configurations from proprietary version if exists.
 
 
-## Target Device Info
+## Product Configuration
 USE_CAMERA_STUB := true
 BOARD_HAS_NO_SELECT_BUTTON := true
-
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_BOARD_PLATFORM := mrvl
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_VARIANT := cortex-a9
-TARGET_CPU_SMP := true
 
-TARGET_BOOTLOADER_BOARD_NAME := PXA988
-ARCH_ARM_HAVE_TLS_REGISTER := true
 
-TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
+## SoC Configurations
+TARGET_CPU_ABI := armeabi-v7a                                                         # The detailed CPU architecture of target device.
+TARGET_CPU_ABI2 := armeabi                                                            # The general CPU architecture of target device.
+TARGET_CPU_VARIANT := cortex-a9                                                       # The variant of the CPU on your device.
+TARGET_CPU_SMP := true                                                                # 
+TARGET_BOOTLOADER_BOARD_NAME := PXA988                                                # Board name of target device. This is usually identical with the name of the SoC on your device.
+ARCH_ARM_HAVE_TLS_REGISTER := true                                                    # 
+TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp                # Flags for Cortex-A9 CPU variant. This may depend on the target device specified.
+TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp              # Flags for Cortex-A9 CPU variant. This may depend on the target device specified.
 
 
 ## Kernel
-# TARGET_PREBUILT_KERNEL := device/samsung/goyawifi/kernel
-TARGET_KERNEL_SOURCE  := kernel/samsung/goyawifi
-TARGET_KERNEL_CONFIG  := goyawifi_recovery_defconfig
-BOARD_KERNEL_CMDLINE  := initrd=0x01100000,16m uart_dma vmalloc=0xF000000 qhd_lcd=1 cma=0 ioncarv=80M@0x09000000 reserve_gpu=64M ddr_mode=1 androidboot.emmc_checksum=3 androidboot.serialno=4790f133174c7100 lcd_id=0x00000000 board_id=0x02 disp_start_addr=0x17000000 androidboot.debug_level=0x4f4c sec_debug.level=0 sec_log=0x100000@0x8140000 cordon=e2a982443e9ba15ea7ee67551b4daddf androidboot.selinux=permissive
-BOARD_KERNEL_BASE     := 0x10000000
-BOARD_MKBOOTIMG_ARGS  := --ramdisk_offset 0x01000000
-BOARD_KERNEL_PAGESIZE := 2048
+TARGET_KERNEL_SOURCE  := kernel/samsung/goyawifi								      # Kernel sources for target device.
+TARGET_KERNEL_CONFIG  := goyawifi_recovery_defconfig                                  # Recovery kernel configuration for your device. Optional.
+# BOARD_KERNEL_CMDLINE will depend from device to device. To get the values, read /proc/cmdline on your device.
+BOARD_KERNEL_CMDLINE  := initrd=0x01100000,16m uart_dma vmalloc=0xF000000 qhd_lcd=1 cma=0 ioncarv=80M@0x09000000 reserve_gpu=64M ddr_mode=1 androidboot.emmc_checksum=3 lcd_id=0x00000000 board_id=0x02 disp_start_addr=0x17000000 sec_log=0x100000@0x8140000 androidboot.selinux=permissive
+BOARD_KERNEL_BASE     := 0x10000000                 							      # The base of the targeted device's boot image.
+BOARD_MKBOOTIMG_ARGS  := --ramdisk_offset 0x01000000                                  # Passed argument(s) when compiling the boot image.
+BOARD_KERNEL_PAGESIZE := 2048                                                         # The target device's kernel page size.
 
 
 ## Recovery
@@ -71,7 +58,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 # BOARD_VOLD_MAX_PARTITIONS := 17
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/f_mass_storage/lun%d/file"
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/f_mass_storage/lun%d/file" # 
 
 
 ## Bluetooth
