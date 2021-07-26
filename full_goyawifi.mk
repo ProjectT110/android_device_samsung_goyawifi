@@ -1,25 +1,13 @@
-# Copyright (C) 2013 The Android Open Source Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+### full_goyawifi.mk for goyawifi
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
-# Inherit from goyawifi device
-$(call inherit-product, device/samsung/goyawifi/device_goyawifi.mk)
+## Configuration Files
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)     # Full base configuration file for mostly needed stuff.
+$(call inherit-product, device/samsung/goyawifi/device_goyawifi.mk) # Device configuration file included with the device.
 
-# Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := full_goyawifi
-PRODUCT_DEVICE := goyawifi
-PRODUCT_BRAND := samsung
-PRODUCT_MANUFACTURER := samsung
-PRODUCT_MODEL := SM-T110
+
+## Product Metadata
+PRODUCT_BRAND := samsung                                            # Target device's brand. This is usually the manufacturer of the device.
+PRODUCT_DEVICE := goyawifi                                          # Target device's device name. This is the codename of the device.
+PRODUCT_NAME := full_goyawifi                                       # Target device's building name. This is usually the same as the file name in full_{codename} makefiles.
+PRODUCT_MANUFACTURER := samsung                                     # Target device's manufacturer. This is usually the board manufacturer of the device, but is usually identical to the brand.
+PRODUCT_MODEL := SM-T110                                            # Target device's model. This is the commercial model name given to users, instead of the codename.
