@@ -15,9 +15,9 @@ TARGET_BOARD_PLATFORM := mrvl
 
 
 ## SoC Configurations
-TARGET_CPU_ABI := armeabi-v7a                                                         # The detailed CPU architecture of target device.
-TARGET_CPU_ABI2 := armeabi                                                            # The general CPU architecture of target device.
-TARGET_CPU_VARIANT := cortex-a9                                                       # The variant of the CPU on your device.
+TARGET_CPU_ABI := armeabi-v7a                                                         # Detailed CPU architecture of target device.
+TARGET_CPU_ABI2 := armeabi                                                            # General CPU architecture of target device.
+TARGET_CPU_VARIANT := cortex-a9                                                       # Variant of the CPU on your device.
 TARGET_CPU_SMP := true                                                                # 
 TARGET_BOOTLOADER_BOARD_NAME := PXA988                                                # Board name of target device. This is usually identical with the name of the SoC on your device.
 ARCH_ARM_HAVE_TLS_REGISTER := true                                                    # 
@@ -30,13 +30,13 @@ TARGET_KERNEL_SOURCE  := kernel/samsung/goyawifi								      # Kernel sources f
 TARGET_KERNEL_CONFIG  := goyawifi_recovery_defconfig                                  # Recovery kernel configuration for your device. Optional.
 # BOARD_KERNEL_CMDLINE will depend from device to device. To get the values, read /proc/cmdline on your device.
 BOARD_KERNEL_CMDLINE  := initrd=0x01100000,16m uart_dma vmalloc=0xF000000 qhd_lcd=1 cma=0 ioncarv=80M@0x09000000 reserve_gpu=64M ddr_mode=1 androidboot.emmc_checksum=3 lcd_id=0x00000000 board_id=0x02 disp_start_addr=0x17000000 sec_log=0x100000@0x8140000 androidboot.selinux=permissive
-BOARD_KERNEL_BASE     := 0x10000000                 							      # The base of the targeted device's boot image.
+BOARD_KERNEL_BASE     := 0x10000000                 							      # Base of the targeted device's boot image.
 BOARD_MKBOOTIMG_ARGS  := --ramdisk_offset 0x01000000                                  # Passed argument(s) when compiling the boot image.
-BOARD_KERNEL_PAGESIZE := 2048                                                         # The target device's kernel page size.
+BOARD_KERNEL_PAGESIZE := 2048                                                         # Target device's kernel page size.
 
 
 ## Recovery
-TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
+TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"                                             # Target device's pixel format. 
 BOARD_UMS_LUNFILE := "/sys/class/android_usb/f_mass_storage/lun0/file"
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_LARGE_FILESYSTEM := true
