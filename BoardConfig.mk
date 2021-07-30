@@ -1,7 +1,7 @@
 ### BoardConfig.mk for goyawifi
 
 ## Proprietary Version
-$(call inherit-product-if-exists, vendor/samsung/goyawifi/BoardConfigVendor.mk)       # Get configurations from proprietary version if exists.
+$(call inherit-product-if-exists, vendor/samsung/goyawifi/BoardConfigVendor.mk)
 
 
 ## Product Configuration
@@ -15,28 +15,27 @@ TARGET_BOARD_PLATFORM := mrvl
 
 
 ## SoC Configurations
-TARGET_CPU_ABI := armeabi-v7a                                                         # Detailed CPU architecture of target device.
-TARGET_CPU_ABI2 := armeabi                                                            # General CPU architecture of target device.
-TARGET_CPU_VARIANT := cortex-a9                                                       # Variant of the CPU on your device.
-TARGET_CPU_SMP := true                                                                # 
-TARGET_BOOTLOADER_BOARD_NAME := PXA988                                                # Board name of target device. This is usually identical with the name of the SoC on your device.
-ARCH_ARM_HAVE_TLS_REGISTER := true                                                    # 
-TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp                # Flags for Cortex-A9 CPU variant. This may depend on the target device specified.
-TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp              # Flags for Cortex-A9 CPU variant. This may depend on the target device specified.
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_CPU_VARIANT := cortex-a9
+TARGET_CPU_SMP := true
+TARGET_BOOTLOADER_BOARD_NAME := PXA988
+ARCH_ARM_HAVE_TLS_REGISTER := true
+TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 
 
 ## Kernel
-TARGET_KERNEL_SOURCE  := kernel/samsung/goyawifi								      # Kernel sources for target device.
-TARGET_KERNEL_CONFIG  := goyawifi_recovery_defconfig                                  # Recovery kernel configuration for your device. Optional.
-# BOARD_KERNEL_CMDLINE will depend from device to device. To get the values, read /proc/cmdline on your device.
+TARGET_KERNEL_SOURCE  := kernel/samsung/goyawifi
+TARGET_KERNEL_CONFIG  := goyawifi_recovery_defconfig
 BOARD_KERNEL_CMDLINE  := initrd=0x01100000,16m uart_dma vmalloc=0xF000000 qhd_lcd=1 cma=0 ioncarv=80M@0x09000000 reserve_gpu=64M ddr_mode=1 androidboot.emmc_checksum=3 lcd_id=0x00000000 board_id=0x02 disp_start_addr=0x17000000 sec_log=0x100000@0x8140000 androidboot.selinux=permissive
-BOARD_KERNEL_BASE     := 0x10000000                 							      # Base of the targeted device's boot image.
-BOARD_MKBOOTIMG_ARGS  := --ramdisk_offset 0x01000000                                  # Passed argument(s) when compiling the boot image.
-BOARD_KERNEL_PAGESIZE := 2048                                                         # Target device's kernel page size.
+BOARD_KERNEL_BASE     := 0x10000000
+BOARD_MKBOOTIMG_ARGS  := --ramdisk_offset 0x01000000
+BOARD_KERNEL_PAGESIZE := 2048
 
 
 ## Recovery
-TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"                                             # Target device's pixel format. 
+TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
 BOARD_UMS_LUNFILE := "/sys/class/android_usb/f_mass_storage/lun0/file"
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -58,7 +57,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 # BOARD_VOLD_MAX_PARTITIONS := 17
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/f_mass_storage/lun%d/file" # 
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/f_mass_storage/lun%d/file"
 
 
 ## Bluetooth
@@ -75,6 +74,7 @@ BOARD_BATTERY_DEVICE_NAME := "battery"
 
 
 ## TWRP Configuration
+TW_THEME := landscape_mdpi
 DEVICE_RESOLUTION := 1024x600
 
 RECOVERY_SDCARD_ON_DATA := true
