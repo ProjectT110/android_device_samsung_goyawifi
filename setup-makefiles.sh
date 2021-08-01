@@ -28,7 +28,7 @@ CM_ROOT="$MY_DIR"/../../..
 
 HELPER="$CM_ROOT"/vendor/cm/build/tools/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
-    echo "Unable to find helper script at $HELPER"
+    echo "[ERROR] Unable to find the extraction helper script at \"$HELPER\"!"
     exit 1
 fi
 . "$HELPER"
