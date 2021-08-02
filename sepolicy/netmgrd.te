@@ -1,3 +1,4 @@
+
 # Network utilities (radio process)
 type netmgrd, domain;
 type netmgrd_exec, exec_type, file_type;
@@ -13,7 +14,7 @@ allow netmgrd self:netlink_route_socket { create bind read write nlmsg_read nlms
 allow netmgrd kernel:system module_request;
 
 # Allow logging diagnostic items
-allow netmgrd diagnostic_device:chr_file rw_file_perms;
+allow netmgrd diagnostic_device:chr_file { getattr open read ioctl lock append write };
 
 # /data/data_test/ access with shell
 allow netmgrd shell_exec:file { execute read open execute_no_trans };

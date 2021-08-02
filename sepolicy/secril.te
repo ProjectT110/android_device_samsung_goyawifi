@@ -1,3 +1,4 @@
+
 # sec-ril
 type secril-daemon, domain;
 type secril-daemon_exec, exec_type, file_type;
@@ -10,16 +11,16 @@ allow secril-daemon self:udp_socket { create ioctl };
 unix_socket_connect(secril-daemon, property, init)
 unix_socket_connect(secril-daemon, rild, rild)
 
-allow secril-daemon { efs_file }:file rw_file_perms;
+allow secril-daemon { efs_file }:file { getattr open read ioctl lock append write };
 allow secril-daemon system_data_file:dir create_dir_perms;
 allow secril-daemon system_data_file:file unlink;
 allow secril-daemon radio_data_file:file { create_file_perms };
 allow secril-daemon kernel:system module_request;
 allow secril-daemon self:capability { sys_module fsetid setuid setgid net_admin net_raw dac_override };
-allow secril-daemon system_file:file x_file_perms;
-allow secril-daemon sysfs:file rw_file_perms;
-allow secril-daemon shell_exec:file rx_file_perms;
-allow secril-daemon app_data_file:file rw_file_perms;
+allow secril-daemon system_file:file { getattr execute execute_no_trans };
+allow secril-daemon sysfs:file { getattr open read ioctl lock append write };
+allow secril-daemon shell_exec:file { getattr execute execute_no_trans open read ioctl lock };
+allow secril-daemon app_data_file:file { getattr open read ioctl lock append write };
 allow secril-daemon app_data_file:dir search;
-allow secril-daemon zygote_exec:file rx_file_perms;
-allow secril-daemon ashmem_device:chr_file x_file_perms;
+allow secril-daemon zygote_exec:file { getattr execute execute_no_trans open read ioctl lock };
+allow secril-daemon ashmem_device:chr_file { getattr execute execute_no_trans };
